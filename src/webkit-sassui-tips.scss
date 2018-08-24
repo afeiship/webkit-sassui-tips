@@ -1,0 +1,49 @@
+/*webkit-sassui-tips Start*/
+$webkit-sassui-tips-options:(
+  duration: 200ms,
+  height: 44px
+)!default;
+
+.webkit-sassui-tips{
+  $duration: map-get($map: $webkit-sassui-tips-options, $key: duration);
+  $height:  map-get($map: $webkit-sassui-tips-options, $key: height);
+
+  height: $height;
+  line-height: $height;
+  font-size: 14px;
+  position: fixed;
+  z-index:90;
+  text-align: center;
+  color:#FFF;
+  width:100%;
+  background: rgba(#000,0.8);
+
+  @keyframes fade-in {
+    to {
+      top:0;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      top:0;
+    }
+    to {
+      top: -$height;
+    }
+  }
+
+  &.visible-true,
+  &[data-visible=true] {
+    animation: fade-in $duration ease-in forwards;
+  }
+
+  &,
+  &.visible-false,
+  &[data-visible=false] {
+    top: -$height;
+    animation: fade-out $duration ease-in forwards;
+  }
+
+}
+/*webkit-sassui-tips End*/
