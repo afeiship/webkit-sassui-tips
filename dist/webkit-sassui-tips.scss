@@ -17,6 +17,7 @@ $webkit-sassui-tips-options:(
   color:#FFF;
   width:100%;
   background: rgba(#000,0.8);
+  user-select: none;
   cursor: pointer;
 
   @keyframes fade-in {
