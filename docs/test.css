@@ -13,13 +13,13 @@
   cursor: pointer;
 }
 
-@keyframes fade-in {
+@keyframes webkit-sassui-tips-fade-in {
   to {
     top: 0;
   }
 }
 
-@keyframes fade-out {
+@keyframes webkit-sassui-tips-fade-out {
   from {
     top: 0;
   }
@@ -29,12 +29,12 @@
 }
 
 .webkit-sassui-tips.visible-true, .webkit-sassui-tips[data-visible=true] {
-  animation: fade-in 200ms ease-in forwards;
+  animation: webkit-sassui-tips-fade-in 200ms ease-in forwards;
 }
 
 .webkit-sassui-tips, .webkit-sassui-tips.visible-false, .webkit-sassui-tips[data-visible=false] {
   top: -44px;
-  animation: fade-out 200ms ease-in forwards;
+  animation: webkit-sassui-tips-fade-out 200ms ease-in forwards;
 }
 
 /*webkit-sassui-tips End*/

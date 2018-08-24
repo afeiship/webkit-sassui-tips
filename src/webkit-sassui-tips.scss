@@ -20,13 +20,13 @@ $webkit-sassui-tips-options:(
   user-select: none;
   cursor: pointer;
 
-  @keyframes fade-in {
+  @keyframes webkit-sassui-tips-fade-in {
     to {
       top:0;
     }
   }
 
-  @keyframes fade-out {
+  @keyframes webkit-sassui-tips-fade-out {
     from {
       top:0;
     }
@@ -37,14 +37,14 @@ $webkit-sassui-tips-options:(
 
   &.visible-true,
   &[data-visible=true] {
-    animation: fade-in $duration ease-in forwards;
+    animation: webkit-sassui-tips-fade-in $duration ease-in forwards;
   }
 
   &,
   &.visible-false,
   &[data-visible=false] {
     top: -$height;
-    animation: fade-out $duration ease-in forwards;
+    animation: webkit-sassui-tips-fade-out $duration ease-in forwards;
   }
 
 }
