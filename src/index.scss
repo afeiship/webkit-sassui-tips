@@ -1,12 +1,12 @@
-/*webkit-sassui-tips Start*/
-$webkit-sassui-tips-options:(
+/*wsui-tips Start*/
+$wsui-tips-options:(
   duration: 200ms,
   height: 44px
 )!default;
 
-.webkit-sassui-tips{
-  $duration: map-get($map: $webkit-sassui-tips-options, $key: duration);
-  $height:  map-get($map: $webkit-sassui-tips-options, $key: height);
+.wsui-tips{
+  $duration: map-get($map: $wsui-tips-options, $key: duration);
+  $height:  map-get($map: $wsui-tips-options, $key: height);
 
   height: $height;
   line-height: $height;
@@ -16,17 +16,18 @@ $webkit-sassui-tips-options:(
   text-align: center;
   color:#FFF;
   width:100%;
+  left:0;
   background: rgba(#000,0.8);
   user-select: none;
   cursor: pointer;
 
-  @keyframes webkit-sassui-tips-fade-in {
+  @keyframes wsui-tips-fade-in {
     to {
       top:0;
     }
   }
 
-  @keyframes webkit-sassui-tips-fade-out {
+  @keyframes wsui-tips-fade-out {
     from {
       top:0;
     }
@@ -37,15 +38,15 @@ $webkit-sassui-tips-options:(
 
   &.visible-true,
   &[data-visible=true] {
-    animation: webkit-sassui-tips-fade-in $duration ease-in forwards;
+    animation: wsui-tips-fade-in $duration ease-in forwards;
   }
 
   &,
   &.visible-false,
   &[data-visible=false] {
     top: -$height;
-    animation: webkit-sassui-tips-fade-out $duration ease-in forwards;
+    animation: wsui-tips-fade-out $duration ease-in forwards;
   }
 
 }
-/*webkit-sassui-tips End*/
+/*wsui-tips End*/

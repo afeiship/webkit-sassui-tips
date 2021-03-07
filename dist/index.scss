@@ -1,0 +1,61 @@
+/*!
+ * name: @jswork/wsui-tips
+ * description: Webkit sass for tips.
+ * homepage: https://github.com/afeiship/wsui-tips
+ * version: 1.0.0
+ * date: 2021-03-07 20:55:17
+ * license: MIT
+ */
+
+/*wsui-tips Start*/
+$wsui-tips-options:(
+  duration: 200ms,
+  height: 44px
+)!default;
+
+.wsui-tips{
+  $duration: map-get($map: $wsui-tips-options, $key: duration);
+  $height:  map-get($map: $wsui-tips-options, $key: height);
+
+  height: $height;
+  line-height: $height;
+  font-size: 14px;
+  position: fixed;
+  z-index:90;
+  text-align: center;
+  color:#FFF;
+  width:100%;
+  left:0;
+  background: rgba(#000,0.8);
+  user-select: none;
+  cursor: pointer;
+
+  @keyframes wsui-tips-fade-in {
+    to {
+      top:0;
+    }
+  }
+
+  @keyframes wsui-tips-fade-out {
+    from {
+      top:0;
+    }
+    to {
+      top: -$height;
+    }
+  }
+
+  &.visible-true,
+  &[data-visible=true] {
+    animation: wsui-tips-fade-in $duration ease-in forwards;
+  }
+
+  &,
+  &.visible-false,
+  &[data-visible=false] {
+    top: -$height;
+    animation: wsui-tips-fade-out $duration ease-in forwards;
+  }
+
+}
+/*wsui-tips End*/

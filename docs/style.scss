@@ -1,0 +1,31 @@
+@import "../src/index.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.test-wsui-tips {
+  border: 1px solid red;
+}
+
+.container {
+  width: 50%;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+#btn {
+  width: 100%;
+  background: #4cd964;
+  border: none;
+  padding: 14px;
+  text-align: center;
+  color: #fff;
+  margin-top: 100px;
+  outline: none;
+  border-radius: 4px;
+  &:active {
+    background: darken(#4cd964, 10%);
+  }
+}

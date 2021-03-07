@@ -1,0 +1,54 @@
+/*!
+ * name: @jswork/wsui-tips
+ * description: Webkit sass for tips.
+ * homepage: https://github.com/afeiship/wsui-tips
+ * version: 1.0.0
+ * date: 2021-03-07 20:55:17
+ * license: MIT
+ */
+/*wsui-tips Start*/
+.wsui-tips {
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  position: fixed;
+  z-index: 90;
+  text-align: center;
+  color: #FFF;
+  width: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer; }
+
+@-webkit-keyframes wsui-tips-fade-in {
+  to {
+    top: 0; } }
+
+@keyframes wsui-tips-fade-in {
+  to {
+    top: 0; } }
+
+@-webkit-keyframes wsui-tips-fade-out {
+  from {
+    top: 0; }
+  to {
+    top: -44px; } }
+
+@keyframes wsui-tips-fade-out {
+  from {
+    top: 0; }
+  to {
+    top: -44px; } }
+  .wsui-tips.visible-true, .wsui-tips[data-visible=true] {
+    -webkit-animation: wsui-tips-fade-in 200ms ease-in forwards;
+            animation: wsui-tips-fade-in 200ms ease-in forwards; }
+  .wsui-tips, .wsui-tips.visible-false, .wsui-tips[data-visible=false] {
+    top: -44px;
+    -webkit-animation: wsui-tips-fade-out 200ms ease-in forwards;
+            animation: wsui-tips-fade-out 200ms ease-in forwards; }
+
+/*wsui-tips End*/

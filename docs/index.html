@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>webkit-sassui-tips</title>
-  <link rel="stylesheet" href="./test.css">
+  <title>wsui-tips</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
+  <div class="container">
     <button id="btn">ShowTips</button>
-
-    <div id="el" class="webkit-sassui-tips" data-visible="false" hidden>
+    <div id="el" class="wsui-tips" data-visible="false" hidden>
       I am top tips content!
     </div>
+  </div>
 
-    <script>
-      var el = document.getElementById('el');
-      var btn = document.getElementById('btn');
-      var timer = null;
+  <script>
+    var el = document.getElementById('el');
+    var btn = document.getElementById('btn');
+    var timer = null;
 
-      el.addEventListener('webkitAnimationEnd',()=>{
-        if(el.getAttribute('data-visible') === 'false'){
-          el.hidden = true;
-        }
-      })
+    el.addEventListener('webkitAnimationEnd', () => {
+      if (el.getAttribute('data-visible') === 'false') {
+        el.hidden = true;
+      }
+    })
 
-      el.onclick = function(){
+    el.onclick = function () {
+      el.setAttribute('data-visible', false);
+    }
+
+    btn.onclick = function () {
+      el.removeAttribute('hidden');
+      el.setAttribute('data-visible', true);
+      timer && clearTimeout(timer);
+      timer = setTimeout(() => {
         el.setAttribute('data-visible', false);
-      }
+      }, 2000)
+    }
 
-      btn.onclick = function(){
-        el.removeAttribute('hidden');
-        el.setAttribute('data-visible',true);
-        timer && clearTimeout(timer);
-        timer = setTimeout(()=>{
-          el.setAttribute('data-visible', false);
-        },2000)
-      }
-
-    </script>
-
+  </script>
 </body>
+
 </html>

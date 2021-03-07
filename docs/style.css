@@ -1,0 +1,71 @@
+/*wsui-tips Start*/
+.wsui-tips {
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  position: fixed;
+  z-index: 90;
+  text-align: center;
+  color: #FFF;
+  width: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  user-select: none;
+  cursor: pointer;
+}
+
+@keyframes wsui-tips-fade-in {
+  to {
+    top: 0;
+  }
+}
+
+@keyframes wsui-tips-fade-out {
+  from {
+    top: 0;
+  }
+  to {
+    top: -44px;
+  }
+}
+
+.wsui-tips.visible-true, .wsui-tips[data-visible=true] {
+  animation: wsui-tips-fade-in 200ms ease-in forwards;
+}
+
+.wsui-tips, .wsui-tips.visible-false, .wsui-tips[data-visible=false] {
+  top: -44px;
+  animation: wsui-tips-fade-out 200ms ease-in forwards;
+}
+
+/*wsui-tips End*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.test-wsui-tips {
+  border: 1px solid red;
+}
+
+.container {
+  width: 50%;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+#btn {
+  width: 100%;
+  background: #4cd964;
+  border: none;
+  padding: 14px;
+  text-align: center;
+  color: #fff;
+  margin-top: 100px;
+  outline: none;
+  border-radius: 4px;
+}
+
+#btn:active {
+  background: #2ac845;
+}
